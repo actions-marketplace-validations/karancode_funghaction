@@ -1,0 +1,2 @@
+# funaction
+Fun Github Action
