@@ -1,5 +1,5 @@
 # action.yaml
-name: 'Funaction'
+name: 'Funghaction'
 author: 'karancode <karanthanvi0@gmail.com>'
 description: 'A fun github action adding random things to your Pull Requests'
 branding:
