@@ -6,7 +6,6 @@ function get_joke {
 
     joke=$(curl -s -S -H "accept: application/json" -X GET "${JOKE_API_ENDPOINT}" | jq -r '.setup, .punchline')
     
-    echo "[Joke]${joke} :laughing"
     do_comment "Joke" "${joke}" "laughing"
 }
 
@@ -22,7 +21,6 @@ function get_quote {
     
     quote="${quote_string} - ${quote_author}"
     
-    echo "[Quote] ${quote} :sunglasses:"
     do_comment "Quote" "${quote}" "sunglasses"
 }
 
@@ -32,7 +30,6 @@ function get_fact {
     
     fact=$(curl -s -S -X GET "${FACT_API_ENDPOINT}" | jq -r '.text')
 
-    echo "[Fact] ${fact} :astonished:"
     do_comment "Fact" "${fact}" "astonished"
 
 }
