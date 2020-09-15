@@ -7,7 +7,7 @@ An exit code of `0` is considered a successful execution.
 ## Usage
 The most common usage is to use `funaction` with fun type `random`. This will randomly chose either of `quote`/`joke`/`fact`. Acorrdingly a comment will be posted to the pull request depending on the fun typ. This workflow can be configured by adding the following content to the GitHub Actions workflow YAML file.
 ```yaml
-name: 'Funcation'
+name: 'Funaction'
 on:
   - pull_request
 jobs:
