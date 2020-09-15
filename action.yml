@@ -1,0 +1,18 @@
+# action.yaml
+name: 'Funaction'
+author: 'karancode <karanthanvi0@gmail.com>'
+description: 'A fun github action adding random things to your Pull Requests'
+branding:
+  icon: 'smile'
+  color: 'blue'
+inputs:
+  fun:
+    description: 'Fun to add to your pull request.'
+    required: false
+    default: 'random'
+outputs:
+  fun_output:
+    description: 'fun output that was added to yout pull request.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
