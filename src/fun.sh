@@ -44,7 +44,7 @@ function do_comment {
         comment_wrapper="**[${type}] _${content}_** \:${emoji}\:"
         comment_payload=$(echo "${comment_wrapper}" | jq -R --slurp '{body: .}')
         comment_url=$(cat ${GITHUB_EVENT_PATH} | jq -r .pull_request.comments_url)
-        echo "${comment_payload}" | curl -s -S -H "Authorization: token ${GITHUB_TOKEN}" --header "Content-Type: application/json" --data @- "${build_comment_url}" > /dev/null
+        echo "${comment_payload}" | curl -s -S -H "Authorization: token ${GITHUB_TOKEN}" --header "Content-Type: application/json" --data @- "${comment_url}" > /dev/null
 
     fi
 
