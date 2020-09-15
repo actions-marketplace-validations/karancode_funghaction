@@ -5,7 +5,7 @@ function get_joke {
     JOKE_API_ENDPOINT="https://official-joke-api.appspot.com/random_joke"
 
     joke=$(curl -s -S -H "accept: application/json" -X GET "${JOKE_API_ENDPOINT}" | jq -r '.setup, .punchline')
-    
+
     do_comment "Joke" "${joke}" "laughing"
 }
 
@@ -42,6 +42,7 @@ function do_comment {
     if [ "${GITHUB_EVENT_NAME}" == "pull_request" ]; then
         
         comment_wrapper="**[${type}] _${content}_** \:${emoji}\:"
+        echo ${comment_wrapper}
         comment_payload=$(echo "${comment_wrapper}" | jq -R --slurp '{body: .}')
         comment_url=$(cat ${GITHUB_EVENT_PATH} | jq -r .pull_request.comments_url)
         echo "${comment_payload}" | curl -s -S -H "Authorization: token ${GITHUB_TOKEN}" --header "Content-Type: application/json" --data @- "${comment_url}" > /dev/null
