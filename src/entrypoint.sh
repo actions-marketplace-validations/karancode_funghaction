@@ -7,7 +7,6 @@ function random_choice {
     len=${#fun_type_all[@]}
     random_index=$(($RANDOM % $len))
     fun_type=${fun_type_all[$random_index]}
-    echo $fun_type
 }
 
 function contains {
@@ -45,9 +44,6 @@ function main {
     if [ "${fun_type}" == "random" ]; then
         random_choice
     fi
-
-    echo $fun_type
-
     case $fun_type in
 
     fact)

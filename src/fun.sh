@@ -6,7 +6,7 @@ function get_joke {
 
     joke=$(curl -s -S -H "accept: application/json" -X GET "${JOKE_API_ENDPOINT}" | jq -r '.setup, .punchline')
 
-    do_comment "Joke" "${joke}" "laughing"
+    do_comment "${joke}" "laughing"
 }
 
 function get_quote {
@@ -21,7 +21,7 @@ function get_quote {
     
     quote="${quote_string} - ${quote_author}"
     
-    do_comment "Quote" "${quote}" "sunglasses"
+    do_comment "${quote}" "sunglasses"
 }
 
 function get_fact {
@@ -30,19 +30,17 @@ function get_fact {
     
     fact=$(curl -s -S -X GET "${FACT_API_ENDPOINT}" | jq -r '.text')
 
-    do_comment "Fact" "${fact}" "astonished"
+    do_comment "${fact}" "astonished"
 
 }
 
 function do_comment {
 
-    type="${1}"
-    content="${2}"
-    emoji="${3}"
+    content="${1}"
+    emoji="${2}"
     if [ "${GITHUB_EVENT_NAME}" == "pull_request" ]; then
         
-        comment_wrapper="**[${type}] _${content}_** \:${emoji}\:"
-        echo ${comment_wrapper}
+        comment_wrapper="**_${content}_** \:${emoji}\:"
         comment_payload=$(echo "${comment_wrapper}" | jq -R --slurp '{body: .}')
         comment_url=$(cat ${GITHUB_EVENT_PATH} | jq -r .pull_request.comments_url)
         echo "${comment_payload}" | curl -s -S -H "Authorization: token ${GITHUB_TOKEN}" --header "Content-Type: application/json" --data @- "${comment_url}" > /dev/null
