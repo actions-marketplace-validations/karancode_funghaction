@@ -1,13 +1,13 @@
-# funaction (Fun Gtihub Action)
-`funaction` comments any random _quote/joke/fact_ to your Pull Request comment. :sunglasses: :laughing: :astonished:
+# Funghaction (Fun Gtihub Action) <sub>(Pronounced as fung-action :fireworks:)</sub>
+`Funghaction` comments any random _quote/joke/fact_ to your Pull Request comment. :sunglasses: :laughing: :astonished:
 
 ## Success Criteria
 An exit code of `0` is considered a successful execution.
 
 ## Usage
-The most common usage is to use `funaction` with fun type `random`. This will randomly chose either of `quote`/`joke`/`fact`. Acorrdingly a comment will be posted to the pull request depending on the fun typ. This workflow can be configured by adding the following content to the GitHub Actions workflow YAML file.
+The most common usage is to use `Funghaction` with fun type `random`. This will randomly chose either of `quote`/`joke`/`fact`. Acorrdingly a comment will be posted to the pull request depending on the fun typ. This workflow can be configured by adding the following content to the GitHub Actions workflow YAML file.
 ```yaml
-name: 'Funaction'
+name: 'Funghaction'
 on:
   - pull_request
 jobs:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Fun'
-        uses: karancode/funaction@master
+        uses: karancode/funghaction@master
 ```
 Just it! :grin:
 
@@ -26,4 +26,4 @@ Just it! :grin:
 
 ## Output
 
-* `fun_ouput` - The funaction comment content.
+* `fun_ouput` - The Funghaction comment content.
