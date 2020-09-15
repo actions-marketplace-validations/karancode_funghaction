@@ -1,5 +1,5 @@
 # funaction (Fun Gtihub Action)
-Fun GitHub Action `funaction`, comments any random _quote/joke/fact_ to your Pull Request comment. :sunglasses: :laughning: :astonished:
+`funaction` comments any random _quote/joke/fact_ to your Pull Request comment. :sunglasses: :laughing: :astonished:
 
 ## Success Criteria
 An exit code of `0` is considered a successful execution.
