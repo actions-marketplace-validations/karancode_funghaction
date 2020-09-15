@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: 'Fun'
         uses: karancode/funghaction@42
+        env:
+            GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
 ```
 Just it! :grin:
 
