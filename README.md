@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Fun'
-        uses: karancode/Funghaction@master
+        uses: karancode/funghaction@master
 ```
 Just it! :grin:
 
